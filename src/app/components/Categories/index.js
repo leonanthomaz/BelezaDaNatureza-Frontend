@@ -30,6 +30,16 @@ export const Categories = () => {
                 </CT.LogoContainer> 
             </CT.Left>
             <CT.Center>
+               
+                <CT.Menu click={click}>
+                    <CT.Nav onClick={handleClick}>Home</CT.Nav>
+                    <CT.Nav>Skincare</CT.Nav>
+                    <CT.Nav>Corpo</CT.Nav>
+                    <CT.Nav>Cabelo</CT.Nav>
+                    <CT.Nav>Aromas</CT.Nav>
+                </CT.Menu>
+            </CT.Center>
+            <CT.Right>
                 {click ? <AiOutlineClose style={{
                     cursor: 'pointer'
                 }}
@@ -37,18 +47,12 @@ export const Categories = () => {
                 /> : <BiMenu onClick={handleClick} style={{
                     cursor: 'pointer'
                 }}/> }
-                <CT.Menu click={click}>
-                    <CT.Nav onClick={handleClick}>Home</CT.Nav>
-                    <CT.Nav>Home</CT.Nav>
-                    <CT.Nav>Home</CT.Nav>
-                    <CT.Nav>Home</CT.Nav>
-                    <CT.Nav>Home</CT.Nav>
-                </CT.Menu>
-            </CT.Center>
-            <CT.Right>
-                <BsSearch/>
-                <BsBag/>
-                <AiOutlineUser/>
+                <CT.Icons>
+                    <BsSearch/>
+                    <BsBag/>
+                    <AiOutlineUser/>
+                </CT.Icons>
+                
             </CT.Right>
         </CT.Container>
     )

@@ -10,8 +10,8 @@ import { Link } from 'react-router-dom'
 export const Products = () => {
     const { products } = useContext(StoreContext)
     const [ changePhoto, setChangePhoto ] = useState(false)
-    const imgPath = process.env.REACT_APP_IMG_PATH
-    const baseUrl = process.env.REACT_APP_BASEURL
+    const imgPath = process.env.REACT_APP_PATH_IMG_FOLDER
+    // const baseUrl = process.env.REACT_APP_BASEURL
 
     console.log(changePhoto)
 
@@ -29,7 +29,12 @@ export const Products = () => {
                         </PD.Stars>
                         <PD.Stars>
                             <figure>
-                            <   img src={changePhoto ? prod : prod2 } onMouseLeave={()=>{setChangePhoto(false)}} onMouseEnter={()=>{setChangePhoto(true)}} alt='' width={200} />
+                            <   img src={changePhoto 
+                                            // ? REACT_APP_PATH_IMG_FOLDER + item.img1 
+                                            ? prod
+                                            // : REACT_APP_PATH_IMG_FOLDER + item.img2 
+                                            : prod2
+                                        } onMouseLeave={()=>{setChangePhoto(false)}} onMouseEnter={()=>{setChangePhoto(true)}} alt='' width={200} />
                             {/* <   img src={changePhoto ? `${baseUrl}src/app/share/assets/img/products/${item.img1}` : `${baseUrl}src/app/share/assets/img/products/${item.img2}`} onMouseLeave={()=>{setChangePhoto(false)}} onMouseEnter={()=>{setChangePhoto(true)}} alt='' width={200} /> */}
                             </figure>
                         </PD.Stars>
