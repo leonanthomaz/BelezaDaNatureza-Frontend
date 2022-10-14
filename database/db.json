@@ -5,8 +5,7 @@
             "name": "Produto1", 
             "description": "typicode",
             "price": 1.99,
-            "img1": "products/oleo.jpg",
-            "img2": "products/oleo1.jpg",
+            "img": "products/oleo.jpg",
             "news": 1,
             "emphasis": 0
         },
@@ -15,7 +14,7 @@
             "name": "Produto2", 
             "description": "acascw",
             "price": 1.99,
-            "img1": "products/oleo.jpg",
+            "img": "products/oleo.jpg",
             "img2": "products/oleo1.jpg",
             "news": 1,
             "emphasis": 1
@@ -25,8 +24,7 @@
             "name": "Produto3", 
             "description": "acascw",
             "price": 1.99,
-            "img1": "products/oleo.jpg",
-            "img2": "products/oleo1.jpg",
+            "img": "products/oleo.jpg",
             "news": 0,
             "emphasis": 1
         }
