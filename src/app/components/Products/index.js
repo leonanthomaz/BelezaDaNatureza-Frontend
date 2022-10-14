@@ -5,20 +5,19 @@ import FiveStars from '../../share/assets/img/fivestars.png'
 import prod from '../../share/assets/img/products/oleo1.jpg'
 import prod2 from '../../share/assets/img/products/oleo.jpg'
 import { Link } from 'react-router-dom'
+import { CartContext } from '../../share/contexts/cart'
 
 
 export const Products = () => {
     const { products } = useContext(StoreContext)
+    const { addCart } = useContext(CartContext)
     const [ changePhoto, setChangePhoto ] = useState(false)
     const imgPath = process.env.REACT_APP_PATH_IMG_FOLDER
     // const baseUrl = process.env.REACT_APP_BASEURL
 
-    console.log(changePhoto)
-
     return (
         <PD.Container>
             {products.map((item, index)=>{
-                console.log(item.img1)
                 return (
                     <PD.Box key={index}>
                         <PD.Title>{item.name}</PD.Title>
@@ -29,18 +28,14 @@ export const Products = () => {
                         </PD.Stars>
                         <PD.Stars>
                             <figure>
-                            <   img src={changePhoto 
-                                            // ? REACT_APP_PATH_IMG_FOLDER + item.img1 
-                                            ? prod
-                                            // : REACT_APP_PATH_IMG_FOLDER + item.img2 
-                                            : prod2
-                                        } onMouseLeave={()=>{setChangePhoto(false)}} onMouseEnter={()=>{setChangePhoto(true)}} alt='' width={200} />
-                            {/* <   img src={changePhoto ? `${baseUrl}src/app/share/assets/img/products/${item.img1}` : `${baseUrl}src/app/share/assets/img/products/${item.img2}`} onMouseLeave={()=>{setChangePhoto(false)}} onMouseEnter={()=>{setChangePhoto(true)}} alt='' width={200} /> */}
+                                <img src={prod} alt='' width={200} />
+                                {/* <figcaption>Imagem do produto {item.name}</figcaption> */}
                             </figure>
                         </PD.Stars>
                         <PD.Description>{item.description}</PD.Description>
                         <PD.Price>{item.price}</PD.Price>
-                        <Link to='/cart'>Adicionar</Link>
+                        {/* <PD.NavLink to={`/cart/${item.id}`}>Adicionar</PD.NavLink> */}
+                        <PD.NavLink onClick={()=>addCart(item.id)}>Adicionar</PD.NavLink>
                         <PD.Button>Adicionar</PD.Button>
                     </PD.Box>
                 )

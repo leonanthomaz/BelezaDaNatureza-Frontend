@@ -1,14 +1,6 @@
-import { createGlobalStyle } from "styled-components"
+import styled from "styled-components";
 
-export const GlobalStyles = createGlobalStyle`
-
-body {
-  margin: 0;
-  font-family: 'Josefin Sans', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: #eeeeee;
-}
+export const Whatsapp = styled.div`
 /* for desktop */
 .whatsapp_float {
           position: fixed;
@@ -43,5 +35,4 @@ body {
               font-size: 22px;
           }
       }
-
-`;
+`

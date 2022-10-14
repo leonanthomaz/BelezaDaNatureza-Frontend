@@ -15,6 +15,8 @@ export const Menu = styled.ul`
 display: flex;
 flex-direction: row;
 list-style: none;
+font-size: 16px;
+font-weight: 500;
 `;
 
 export const Nav = styled.li`

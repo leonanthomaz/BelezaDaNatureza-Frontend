@@ -6,6 +6,7 @@ import { BsSearch, BsBag } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
 import { BiMenu } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 export const Categories = () => {
     const [ click, setClick ] = useState(false)
@@ -49,7 +50,9 @@ export const Categories = () => {
                 }}/> }
                 <CT.Icons>
                     <BsSearch/>
-                    <BsBag/>
+                    <Link to='/cart'>
+                        <BsBag/>
+                    </Link>
                     <AiOutlineUser/>
                 </CT.Icons>
                 
