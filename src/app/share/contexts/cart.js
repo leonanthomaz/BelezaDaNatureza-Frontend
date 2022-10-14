@@ -6,7 +6,6 @@ export const CartContext = createContext()
 export const CartProvider = ({ children }) => {
 
     const [ list, setList ] = useState([])
-    // console.log('list=>', list)
 
     useEffect(()=>{
         const loadData = async () => {

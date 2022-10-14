@@ -1,27 +1,21 @@
 
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import * as H from './HeaderStyles'
 import LogoImg from '../../share/assets/img/logo-png.png'
-import { BsSearch, BsBag } from "react-icons/bs";
-import { AiOutlineUser } from "react-icons/ai";
-import { BiMenu } from "react-icons/bi";
-import { AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
     const [ click, setClick ] = useState(false)
+    const [ cart, setCart ] = useState([])
+
+    useEffect(()=>{
+        setCart(JSON.parse(localStorage.getItem('cart')))
+    },[])
 
     const handleClick = () => {
         setClick(!click)
     }
 
-    const closeNavbar = () => {
-        if(click === true){
-          setClick(false)
-        }
-    }
-
-    
     return(
         <H.Container>
             <H.Left>
@@ -54,20 +48,28 @@ export const Header = () => {
                 </H.Menu>
             </H.Center>
             <H.Right>
-                {click ? <AiOutlineClose style={{
+                
+            <H.Icons>
+                {click ? <H.IconClose style={{
                     cursor: 'pointer'
                 }}
                 onClick={handleClick} 
-                /> : <BiMenu onClick={handleClick} style={{
+                /> : <H.IconMenu onClick={handleClick} style={{
                     cursor: 'pointer'
                 }}/> }
-                <H.Icons>
-                    <BsSearch/>
-                    <Link to='/cart'>
-                        <BsBag/>
-                    </Link>
-                    <AiOutlineUser/>
-                </H.Icons>
+                <Link to='/myaccount'>
+                    <H.IconUser/>
+                </Link>
+                <Link to='/cart'>
+                    <H.IconSacola/>
+                    {cart ? cart.length : ''}
+                    {/* <H.NumberSacola>
+                        {number}
+                    </H.NumberSacola> */}
+                    
+                </Link>
+                {/* <H.IconSearch/> */}
+            </H.Icons>
                 
             </H.Right>
         </H.Container>

@@ -12,7 +12,6 @@ export const Cart = () => {
     const { products } = useContext(StoreContext)
 
     const [ cart, setCart ] = useState([])
-    console.log('cart',cart)
     useEffect(()=>{
       const cartLocal = JSON.parse(localStorage.getItem("cart"))
       setCart(cartLocal)

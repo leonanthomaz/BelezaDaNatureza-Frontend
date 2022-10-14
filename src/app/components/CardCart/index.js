@@ -13,9 +13,10 @@ export const CardCart = ({id, img, name, price, qtd}) => {
                 <CC.Title>{name}</CC.Title>
                 <span>Spinner</span>
                 <CC.Price><p>{price}</p></CC.Price>
+                <CC.Price><p>{qtd}x</p></CC.Price>
                 <CC.Total><p>{price}</p></CC.Total>
             </CC.Right>
-            
+
         </CC.Container>
     )
 }
