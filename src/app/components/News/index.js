@@ -1,18 +1,19 @@
 
 import React, { useContext } from "react";
-import * as EM from './EmphasisStyles'
+import { Products } from "../Products";
+import * as N from './NewsStyles'
 import { StoreContext } from "../../share/contexts/store";
 import { CardProducts } from "../CardProducts";
 
-export const Emphasis = () => {
+export const News = () => {
     const { products } = useContext(StoreContext)
 
     return(
-        <EM.Container>
-            <h1>Destaques</h1>
-            <EM.CardContainer>
+        <N.Container>
+            <h1>Novidades</h1>
+            <N.CardContainer>
                 {products.map((item, index)=>{
-                    if(item.emphasis === 1){
+                    if(item.news === 1){
                         return (
                             <CardProducts
                                 key={index}
@@ -26,7 +27,7 @@ export const Emphasis = () => {
                         )
                     }
                 })}
-            </EM.CardContainer>
-        </EM.Container>
+            </N.CardContainer>
+        </N.Container>
     )
 }

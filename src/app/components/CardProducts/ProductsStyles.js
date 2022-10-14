@@ -1,34 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const NavLink = styled(Link)`
-    color: black;
-    text-decoration: none;
-    &:hover{
-        color: red;
-    }
-`;
-
 export const Container = styled.div`
-
-display: grid;
-grid-template-columns: 300px 300px 300px;
-justify-content: center;
-text-align: center;
-
-@media(max-width: 760px){
-    grid-template-columns: 200px 200px 200px;
-}
-
-@media(max-width: 760px){
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-`
-
-export const Box = styled.div`
 
 /* border: 2px solid red; */
 display: flex;
@@ -39,6 +12,7 @@ box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 border-radius: 7px;
 gap: 5px;
 margin: 15px;
+
 `
 
 export const Title = styled.h1`
@@ -60,7 +34,6 @@ img{
 }
 `
 
-
 export const Description = styled.span`
 font-size: 16px;
 
@@ -73,3 +46,10 @@ font-size: 14px;
 export const Button = styled.button`
 
 `
+export const NavLink = styled(Link)`
+    color: black;
+    text-decoration: none;
+    &:hover{
+        color: red;
+    }
+`;

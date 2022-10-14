@@ -6,7 +6,9 @@
             "description": "typicode",
             "price": 1.99,
             "img1": "products/oleo.jpg",
-            "img2": "products/oleo1.jpg"
+            "img2": "products/oleo1.jpg",
+            "news": 1,
+            "emphasis": 0
         },
         { 
             "id": 2, 
@@ -14,7 +16,9 @@
             "description": "acascw",
             "price": 1.99,
             "img1": "products/oleo.jpg",
-            "img2": "products/oleo1.jpg"
+            "img2": "products/oleo1.jpg",
+            "news": 1,
+            "emphasis": 1
         },
         { 
             "id": 3, 
@@ -22,7 +26,9 @@
             "description": "acascw",
             "price": 1.99,
             "img1": "products/oleo.jpg",
-            "img2": "products/oleo1.jpg"
+            "img2": "products/oleo1.jpg",
+            "news": 0,
+            "emphasis": 1
         }
     ]
 }

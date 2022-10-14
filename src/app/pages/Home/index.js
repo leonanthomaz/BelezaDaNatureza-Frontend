@@ -6,6 +6,7 @@ import { Categories } from '../../components/Categories'
 import { Intro } from '../../components/Intro'
 import { Emphasis } from '../../components/Emphasis'
 import { Footer } from '../../components/Footer'
+import { News } from '../../components/News'
 
 export const Home = () => {
     return (
@@ -14,6 +15,7 @@ export const Home = () => {
             <Categories/>
             <Intro/>
             <Emphasis/>
+            <News/>
             <Footer />
         </H.Container>
     )

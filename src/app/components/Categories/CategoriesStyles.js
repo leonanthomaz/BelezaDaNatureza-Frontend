@@ -4,7 +4,7 @@ export const Container = styled.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
-border: 2px solid green;
+box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 height: 60px;
 
 @media(max-width: 760px){
