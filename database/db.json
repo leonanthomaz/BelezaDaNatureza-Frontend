@@ -1,0 +1,28 @@
+{
+    "products": [
+        { 
+            "id": 1, 
+            "name": "Produto1", 
+            "description": "typicode",
+            "price": 1.99,
+            "img1": "products/oleo.jpg",
+            "img2": "products/oleo1.jpg"
+        },
+        { 
+            "id": 2, 
+            "name": "Produto2", 
+            "description": "acascw",
+            "price": 1.99,
+            "img1": "products/oleo.jpg",
+            "img2": "products/oleo1.jpg"
+        },
+        { 
+            "id": 3, 
+            "name": "Produto3", 
+            "description": "acascw",
+            "price": 1.99,
+            "img1": "products/oleo.jpg",
+            "img2": "products/oleo1.jpg"
+        }
+    ]
+}
