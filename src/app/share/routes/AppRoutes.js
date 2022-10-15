@@ -22,7 +22,7 @@ export const AppRouter = () => {
                     <Route path='/' exact element={<Home/>}/>
                     <Route path='/categories/:id' exact element={<Home/>}/>
                     <Route path='/cart' element={ <Cart />}/>
-                    <Route path='/checkout' element={user ? <Navigate to="/" /> : <Login />}/>
+                    <Route path='/login' element={user ? <Navigate to="/" /> : <Login />}/>
                     <Route path='/register' element={user ? <Navigate to="/" /> : <Register />}/>
                     <Route path='/checkout' element={!user ? <Navigate to="/login" /> : <Checkout />}/>
                 </Routes>

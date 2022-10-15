@@ -8,8 +8,9 @@ export const StoreProvider = ({ children }) => {
 
     useEffect(()=>{
         const loadProducts = async () => {
-            await axios.get('http://localhost:5000/products').then((response)=>{
-                setProducts(response.data)
+            await axios.get('http://localhost:5000/products/list').then((response)=>{
+                console.log(response.data.products)
+                setProducts(response.data.products)
             }).catch((error)=>{
                 console.log(error)
             })

@@ -5,18 +5,12 @@ export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
 
-    const [ list, setList ] = useState([])
+    const [ cart, setCart ] = useState([])
+
+    const carrinho = JSON.parse(localStorage.getItem("cart"))
 
     useEffect(()=>{
-        const loadData = async () => {
-            await axios.get('http://localhost:5000/products').then((response)=>{
-                // console.log(response.data)
-                setList(response.data)
-            }).catch((error)=>{
-                console.log(error)
-            })
-        }
-        loadData()
+        setCart(carrinho)
     },[])
 
     const addCart = (id) => {
@@ -26,18 +20,49 @@ export const CartProvider = ({ children }) => {
         const item = copyProductsCart.find((product) => product.id === id);
         if(!item){
             copyProductsCart.push({ 
-            id: id,
-            qtd: 1, 
+                id: id,
+                qtd: 1, 
             });
         }else{
             item.qtd = item.qtd + 1;
         }
         localStorage.setItem('cart', JSON.stringify(copyProductsCart))
+        setCart(cartLocalStorage)
+    }
+
+    const removeItem = (id) => {
+        // console.log('Função no contexto: ', id)
+        const cartLocalStorage = JSON.parse(localStorage.getItem('cart'))
+        const copyProductsCart = cartLocalStorage ? [...cartLocalStorage] : []
+        const item = copyProductsCart.find((product) => product.id === id);
+        if(!item){
+            copyProductsCart.push({ 
+                id: id, 
+                qtd: 1
+            });
+        }else{
+            item.qtd = item.qtd -1   
+        }
+
+        if(item.qtd <= 0){
+            item.splice({ item, id });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(copyProductsCart))
+        setCart(copyProductsCart)
+    }
+
+    const removeCart = (id) => {
+        const cartLocalStorage = JSON.parse(localStorage.getItem('cart'))
+        const copyProductsCart = cartLocalStorage ? [...cartLocalStorage] : cart
+        const filteredCart = copyProductsCart.filter(cartItem => cartItem.id !== id)
+        localStorage.setItem('cart', JSON.stringify(filteredCart))
+        setCart(filteredCart)
     }
 
 
     return(
-        <CartContext.Provider value={{ addCart }}>
+        <CartContext.Provider value={{ addCart, removeItem, removeCart, cart, setCart }}>
             {children}
         </CartContext.Provider>
     )

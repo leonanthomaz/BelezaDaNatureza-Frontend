@@ -3,14 +3,17 @@ import React, { useContext, useEffect, useState } from "react";
 import * as H from './HeaderStyles'
 import LogoImg from '../../share/assets/img/logo-png.png'
 import { Link } from "react-router-dom";
+import { CartContext } from "../../share/contexts/cart";
 
 export const Header = () => {
-    const [ click, setClick ] = useState(false)
-    const [ cart, setCart ] = useState([])
-
+    const { setCart } = useContext(CartContext)
+    
+    const carrinho = JSON.parse(localStorage.getItem("cart"))
     useEffect(()=>{
-        setCart(JSON.parse(localStorage.getItem('cart')))
-    },[])
+        setCart(carrinho)
+    },[carrinho > 0])
+
+    const [ click, setClick ] = useState(false)
 
     const handleClick = () => {
         setClick(!click)
@@ -62,7 +65,7 @@ export const Header = () => {
                 </Link>
                 <Link to='/cart'>
                     <H.IconSacola/>
-                    {cart ? cart.length : ''}
+                    {carrinho ? carrinho.length : ''}
                     {/* <H.NumberSacola>
                         {number}
                     </H.NumberSacola> */}

@@ -6,16 +6,17 @@ import * as C from './CartStyles'
 import { Link } from 'react-router-dom'
 import { CardCart } from '../../components/CardCart'
 import prod from '../../share/assets/img/products/oleo.jpg'
+import { CartContext } from '../../share/contexts/cart'
 
 export const Cart = () => {
 
     const { products } = useContext(StoreContext)
+    const { cart, setCart } = useContext(CartContext)
 
-    const [ cart, setCart ] = useState([])
+    const carrinho = JSON.parse(localStorage.getItem("cart"))
     useEffect(()=>{
-      const cartLocal = JSON.parse(localStorage.getItem("cart"))
-      setCart(cartLocal)
-    },[])
+        setCart(carrinho)
+    },[carrinho.length > 0])
 
     return (
         <C.Container>
@@ -23,13 +24,13 @@ export const Cart = () => {
             <Header/>
             <C.CartContainer>
                 <C.CartBox>
-                    {cart && cart ? cart.map((item)=>{
+                    {cart && cart.length > 0 ? cart.map((item)=>{
                         return(
-                            products && products.filter(i => i.id === item.id).map(a =>{
+                            products && products.filter(i => i._id === item.id).map(a =>{
                                 return(
                                 <>
                                 <CardCart
-                                id={a.id}
+                                id={a._id}
                                 // img={a.img}
                                 img={prod}
                                 name={a.name}

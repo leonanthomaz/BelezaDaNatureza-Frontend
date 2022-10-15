@@ -1,9 +1,9 @@
-import { createContext, useEffect, useState, useReducer } from "react";
-import axios from "axios";
+import { createContext, useEffect, useReducer } from "react";
 
 const INITIAL_STATE = {
-    user: JSON.parse(localStorage.getItem("user")) || null,
-    // user: { name: "Leonan", idade: "32"},
+    user: JSON.parse(localStorage.getItem("user") || null),
+    error: null,
+    fetching: false
 };
 
 const AuthReducer = (state, action) => {
@@ -38,7 +38,6 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(()=>{
         localStorage.setItem("user", JSON.stringify(state.user))
-        localStorage.setItem("client", JSON.stringify(state.user))
     },[state.user])
 
     const logout = () => {
