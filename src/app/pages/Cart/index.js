@@ -16,7 +16,7 @@ export const Cart = () => {
     const carrinho = JSON.parse(localStorage.getItem("cart"))
     useEffect(()=>{
         setCart(carrinho)
-    },[carrinho.length > 0])
+    },[carrinho])
 
     return (
         <C.Container>
@@ -24,7 +24,7 @@ export const Cart = () => {
             <Header/>
             <C.CartContainer>
                 <C.CartBox>
-                    {cart ? cart.map((item)=>{
+                    {cart && cart.length > 0 ? cart.map((item)=>{
                         return(
                             products && products.filter(i => i._id === item.id).map(a =>{
                                 return(
