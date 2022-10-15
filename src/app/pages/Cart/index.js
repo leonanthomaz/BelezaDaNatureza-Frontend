@@ -16,7 +16,7 @@ export const Cart = () => {
     const carrinho = JSON.parse(localStorage.getItem("cart"))
     useEffect(()=>{
         setCart(carrinho)
-    },[carrinho])
+    },[])
 
     return (
         <C.Container>
