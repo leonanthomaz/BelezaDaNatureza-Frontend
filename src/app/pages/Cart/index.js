@@ -24,7 +24,7 @@ export const Cart = () => {
             <Header/>
             <C.CartContainer>
                 <C.CartBox>
-                    {cart && cart.length > 0 ? cart.map((item)=>{
+                    {cart ? cart.map((item)=>{
                         return(
                             products && products.filter(i => i._id === item.id).map(a =>{
                                 return(
