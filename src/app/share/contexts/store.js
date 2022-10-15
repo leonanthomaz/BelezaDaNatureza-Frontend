@@ -8,7 +8,7 @@ export const StoreProvider = ({ children }) => {
 
     useEffect(()=>{
         const loadProducts = async () => {
-            await axios.get(`${process.env.REACT_APP_BACKENDURL}products/list`).then((response)=>{
+            await axios.get('https://bn-backend.herokuapp.com/products/list').then((response)=>{
                 console.log(response.data.products)
                 setProducts(response.data.products)
             }).catch((error)=>{
