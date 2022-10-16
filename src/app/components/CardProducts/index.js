@@ -13,15 +13,15 @@ export const CardProducts = ({ id, img, name, description, FiveStars, price }) =
                 <PD.Img>
                     <figure>
                         {/* <img src={pathImg + img} alt='' width={200} /> */}
-                        <img src={img} alt='' width={200} />
+                        <img src={`${pathImg + img}`} alt={name} width={200} />
                         {/* <img src={prod} alt='' width={200} /> */}
                     </figure>
                 </PD.Img>
-                <PD.Stars>
+                {/* <PD.Stars>
                     <figure>
                         <img src={pathImg + FiveStars} alt='' width={100} />
                     </figure>
-                </PD.Stars>
+                </PD.Stars> */}
                 <PD.Description>{description}</PD.Description>
                 <PD.Price>{price}</PD.Price>
                 {/* <PD.NavLink to={`/cart/${item.id}`}>Adicionar</PD.NavLink> */}
