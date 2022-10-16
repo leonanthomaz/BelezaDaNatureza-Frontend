@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { CartContext } from '../../share/contexts/cart'
 import * as PD from './ProductsStyles'
-import prod from '../../share/assets/img/products/oleo1.jpg'
+// import prod from '../../share/assets/img/products/oleo1.jpg'
 
 export const CardProducts = ({ id, img, name, description, FiveStars, price }) => {
     const { addCart } = useContext(CartContext)
@@ -13,7 +13,8 @@ export const CardProducts = ({ id, img, name, description, FiveStars, price }) =
                 <PD.Img>
                     <figure>
                         {/* <img src={pathImg + img} alt='' width={200} /> */}
-                        <img src={prod} alt='' width={200} />
+                        <img src={img} alt='' width={200} />
+                        {/* <img src={prod} alt='' width={200} /> */}
                     </figure>
                 </PD.Img>
                 <PD.Stars>
