@@ -12,7 +12,7 @@ export const Login = () => {
     const email = useRef()
     const password = useRef()
 
-    const handleClick = (e) => {
+    const handleSendForm = (e) => {
         e.preventDefault()
         loginStart(
             {email: email.current.value, password: password.current.value}, dispatch
@@ -24,15 +24,23 @@ export const Login = () => {
         <L.Container>
             <Topbar/>
             <Header/>
-            <L.Box>
-                <h1>Login</h1>
-                { error !== null ? <p style={{ color: 'red'}}>{error}</p> : ""}
-                <L.Form onSubmit={handleClick}>
-                    <L.Input placeholder='email' ref={email}/>
-                    <L.Input placeholder='senha' ref={password}/>
-                    <L.Button type="submit">Enviar</L.Button>
-                </L.Form>
-            </L.Box>
+            <L.FormContainer>
+                <L.Box>
+                    <L.Title>Login</L.Title>
+                    { error !== null ? <p style={{ color: 'red'}}>{error}</p> : ""}
+                    <L.Form onSubmit={handleSendForm}>
+                        <L.Input 
+                        placeholder='email'
+                        type="email" 
+                        ref={email}/>
+                        <L.Input 
+                        placeholder='senha'
+                        type="password"  
+                        ref={password}/>
+                        <L.Button type="submit">Enviar</L.Button>
+                    </L.Form>
+                </L.Box>
+            </L.FormContainer>
         </L.Container>
     )
 }

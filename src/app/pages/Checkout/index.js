@@ -6,6 +6,7 @@ import { CartContext } from '../../share/contexts/cart'
 import { StoreContext } from '../../share/contexts/store'
 import * as CK from './CheckoutStyles'
 
+
 export const Checkout = () => {
     const { cart } = useContext(CartContext)
     const { products } = useContext(StoreContext)

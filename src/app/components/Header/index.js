@@ -4,9 +4,11 @@ import * as H from './HeaderStyles'
 import LogoImg from '../../share/assets/img/logo-png.png'
 import { Link } from "react-router-dom";
 import { CartContext } from "../../share/contexts/cart";
+import { AuthContext } from '../../share/contexts/auth'
 
 export const Header = () => {
     const { setCart } = useContext(CartContext)
+    const { user } = useContext(AuthContext)
     
     const carrinho = JSON.parse(localStorage.getItem("cart"))
     useEffect(()=>{
@@ -60,16 +62,12 @@ export const Header = () => {
                 /> : <H.IconMenu onClick={handleClick} style={{
                     cursor: 'pointer'
                 }}/> }
-                <Link to='/myaccount'>
+                <Link to={user ? '/myaccount' : '/login'}>
                     <H.IconUser/>
                 </Link>
                 <Link to='/cart'>
                     <H.IconSacola/>
                     {carrinho ? carrinho.length : ''}
-                    {/* <H.NumberSacola>
-                        {number}
-                    </H.NumberSacola> */}
-                    
                 </Link>
                 {/* <H.IconSearch/> */}
             </H.Icons>

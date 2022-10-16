@@ -7,28 +7,28 @@ const INITIAL_STATE = {
 };
 
 const AuthReducer = (state, action) => {
-    switch (action.type) {
-      case "LOGIN_START":
+  switch(action.type){
+    case 'LOGIN_START':
         return {
-          user: null,
-          isFetching: true,
-          error: false,
-        };
-      case "LOGIN_SUCCESS":
+            user: null,
+            error: false,
+            fetching: true
+        }
+
+    case 'LOGIN_SUCCESS':
         return {
-          user: action.payload,
-          isFetching: false,
-          error: false,
-        };
-      case "LOGIN_FAILURE":
+            user: action.payload,
+            error: false,
+            fetching: false
+        }
+    case 'LOGIN_FAILURE':
         return {
-          user: null,
-          isFetching: false,
-          error: true,
-        };
-      default:
-        return state;
-    }
+            user: null,
+            error: action.payload,
+            fetching: false
+        }
+    default: return state
+  }
 };
 
 export const AuthContext = createContext(INITIAL_STATE);
@@ -50,8 +50,8 @@ export const AuthProvider = ({ children }) => {
     <AuthContext.Provider
         value={{
             user: state.user,
-            isFetching: state.isFetching,
             error: state.error,
+            fetching: state.fetching,
             dispatch,
             logout,
         }}

@@ -7,6 +7,7 @@ import { Cart } from '../../pages/Cart'
 import { Checkout } from '../../pages/Checkout';
 import { Home } from '../../pages/Home'
 import { Login } from '../../pages/Login';
+import { MyAccount } from '../../pages/MyAccount';
 import { Register } from '../../pages/Register';
 import { AuthContext } from '../contexts/auth'
 
@@ -25,6 +26,7 @@ export const AppRouter = () => {
                     <Route path='/login' element={user ? <Navigate to="/" /> : <Login />}/>
                     <Route path='/register' element={user ? <Navigate to="/" /> : <Register />}/>
                     <Route path='/checkout' element={!user ? <Navigate to="/login" /> : <Checkout />}/>
+                    <Route path='/myaccount' element={!user ? <Navigate to="/" /> : <MyAccount />}/>
                 </Routes>
             </AuthProvider>
         </Router>
