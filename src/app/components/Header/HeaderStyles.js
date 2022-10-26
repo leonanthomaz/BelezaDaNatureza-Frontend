@@ -17,7 +17,6 @@ height: 60px;
 `;
 
 export const Menu = styled.ul`
-/* border: 2px solid red; */
 display: flex;
 justify-content: center;
 list-style: none;
@@ -37,7 +36,6 @@ list-style: none;
 `;
 
 export const Nav = styled.li`
-/* border: 2px solid red; */
 margin: 10px;
 
 a{
@@ -50,12 +48,11 @@ a{
         color: white;
     }
 }
-
-
 `;
 
 export const Left = styled.div`
 width: 150px;
+
 `;
 
 export const Center = styled.div`
@@ -65,6 +62,8 @@ export const Center = styled.div`
 export const Right = styled.div`
 display: flex;
 justify-content: space-between;
+justify-content: center;
+align-items: center;
 
 @media(max-width: 760px){
     flex-direction: column;
@@ -115,12 +114,13 @@ img{
 
 `
 
-export const Icons = styled.div`
+export const IconsContainer = styled.div`
 display: flex;
 flex-direction: row;
 align-items: center;
 font-size: 25px;
 margin: 10px;
+border: 2px solid red;
 
 @media(max-width: 760px){
     flex-direction: row;
@@ -128,9 +128,8 @@ margin: 10px;
 
 `
 
-
 export const IconMenu = styled(BiMenu)`
-
+color: #141414;
 font-size: 30px;
 
 @media(min-width: 760px){
@@ -138,11 +137,18 @@ font-size: 30px;
 }
 `
 export const IconClose = styled(AiOutlineClose)`
+color: #141414;
 
 `
 
 export const IconSacola = styled(BsBag)`
+color: #141414;
 margin: 5px;
+
+`
+export const IconUser = styled(AiOutlineUser)`
+margin: 5px;
+color: #141414;
 
 `
 
@@ -150,8 +156,5 @@ export const IconSearch = styled(BsSearch)`
 margin: 5px;
 `
 
-export const IconUser = styled(AiOutlineUser)`
-margin: 5px;
 
-`
 

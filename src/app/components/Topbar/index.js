@@ -7,13 +7,13 @@ export const Topbar = () => {
     return(
         <T.Container>
            <T.Menu>
-                <Link to='/myaccount'>
+                <Link to='/about'>
                     <T.Nav>Sobre nós</T.Nav>
                 </Link>
-                <Link to='/myaccount'>
+                <Link to='/blog'>
                     <T.Nav>Blog</T.Nav>
                 </Link>
-                <Link to='/myaccount'>
+                <Link to='/whatsapp'>
                     <T.Nav>Whatsapp (21) 99999-9999</T.Nav>
                 </Link>
             </T.Menu>

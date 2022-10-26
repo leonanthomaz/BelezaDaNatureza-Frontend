@@ -54,7 +54,7 @@ export const Header = () => {
             </H.Center>
             <H.Right>
                 
-            <H.Icons>
+            <H.IconsContainer>
                 {click ? <H.IconClose style={{
                     cursor: 'pointer'
                 }}
@@ -70,7 +70,7 @@ export const Header = () => {
                     {carrinho ? carrinho.length : ''}
                 </Link>
                 {/* <H.IconSearch/> */}
-            </H.Icons>
+            </H.IconsContainer>
                 
             </H.Right>
         </H.Container>
