@@ -120,7 +120,7 @@ flex-direction: row;
 align-items: center;
 font-size: 25px;
 margin: 10px;
-border: 2px solid red;
+/* border: 2px solid red; */
 
 @media(max-width: 760px){
     flex-direction: row;
