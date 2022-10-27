@@ -12,7 +12,7 @@ import {
 
 import { Home } from '../../pages/Home'
 import { Cart } from '../../pages/Cart'
-// import { Categories } from '../../pages/Categories';
+import { Categories } from '../../pages/Categories';
 import { Checkout } from '../../pages/Checkout';
 import { Login } from '../../pages/Login';
 import { MyAccount } from '../../pages/MyAccount';
@@ -28,7 +28,7 @@ export const AppRouter = () => {
                 <Routes>
                     <Route path='/' exact element={<Home/>}/>
                     <Route path='/cart' element={ <Cart />}/>
-                    {/* <Route path='/categories/:id' exact element={<Categories/>}/> */}
+                    <Route path='/categories/:id' element={<Categories/>}/>
                     <Route path='/login' element={user ? <Navigate to="/" /> : <Login />}/>
                     <Route path='/register' element={user ? <Navigate to="/" /> : <Register />}/>
                     <Route path='/checkout' element={!user ? <Navigate to="/login" /> : <Checkout />}/>

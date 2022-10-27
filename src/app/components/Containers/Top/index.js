@@ -12,7 +12,7 @@ export const Top = () => {
             <TP.Title>Destaques</TP.Title>
             <TP.CardContainer>
                 {products.map((item, index)=>{
-                    if(item.emphasis === 2){
+                    if(item.top === 2){
                         return (
                             <Product
                                 key={index}

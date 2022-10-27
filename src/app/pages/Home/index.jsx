@@ -5,7 +5,7 @@ import { News } from '../../components/Containers/News';
 import { Topbar } from '../../components/Topbar';
 import * as H from './HomeStyles';
 import { Top } from '../../components/Containers/Top';
-
+import { Whatsapp } from '../../components/Whatsapp'
 
 export const Home = () => {
 
@@ -62,6 +62,7 @@ export const Home = () => {
             </div>
             <News/>
             <Top/>
+            <Whatsapp />
         </H.Container>
     )
 }

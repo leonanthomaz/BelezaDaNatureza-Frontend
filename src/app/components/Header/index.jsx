@@ -53,16 +53,16 @@ export const Header = () => {
                         <Link to='/'>Home</Link>
                     </H.Nav>
                     <H.Nav>
-                        <Link to='/categories/skincare'>Skincare</Link>
+                        <Link to='/categories/1'>Skincare</Link>
                     </H.Nav>
                     <H.Nav>
-                        <Link to='/categories/corpo'>Corpo</Link>
+                        <Link to='/categories/2'>Corpo</Link>
                     </H.Nav>
                     <H.Nav>
-                        <Link to='/categories/cabelo'>Cabelo</Link>
+                        <Link to='/categories/3'>Cabelo</Link>
                     </H.Nav>
                     <H.Nav>
-                        <Link to='/categories/aromas'>Aromas</Link>
+                        <Link to='/categories/4'>Aromas</Link>
                     </H.Nav>
                 </H.Menu>
             </H.Center>
