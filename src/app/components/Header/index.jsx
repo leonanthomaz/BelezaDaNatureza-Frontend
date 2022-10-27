@@ -20,7 +20,6 @@ export const Header = () => {
         setClick(!click)
     }
 
-    //ssssssssssssss
     const [blackHeader, setBlackHeader] = useState();
 
     useEffect(() => {
