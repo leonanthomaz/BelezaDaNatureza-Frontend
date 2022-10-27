@@ -12,6 +12,7 @@ export const Cart = () => {
     const { products } = useContext(StoreContext)
     const { cart, setCart } = useContext(CartContext)
     const pathImg = process.env.REACT_APP_PATH_IMG_FOLDER
+    let total = cart.reduce((total, item) => total += (item.qtd * item.price), 0)
 
     const carrinho = JSON.parse(localStorage.getItem("cart"))
     useEffect(()=>{
@@ -39,12 +40,16 @@ export const Cart = () => {
                             })
                         )
                     }) : <h3>Carrinho vazio</h3> } <br/><hr/>
+                    {total && total > 0 ? 
+                    <C.Total><h2>Total: {Number(total).toLocaleString("pt-BR", { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' })}</h2></C.Total>
+                    :
+                    '' 
+                    }
                     {cart && cart.length > 0 ? 
                     <C.Button to='/checkout'>Finalizar Compra</C.Button>
                     : 
                     <C.Button to='/'>Voltar ao início</C.Button>
                     }
-                    
                 </C.CartWrapper>
             </C.CartContainer>
         </C.Container>

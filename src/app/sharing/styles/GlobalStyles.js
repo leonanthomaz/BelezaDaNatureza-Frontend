@@ -8,6 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #eeeeee;
   font-family: 'Montserrat', sans-serif;
+  transition: all 0.5s ease;
 
   /* font-family: 'Dela Gothic One', cursive;
   font-family: 'Lobster', cursive;

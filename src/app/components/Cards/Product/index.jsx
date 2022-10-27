@@ -17,7 +17,7 @@ export const Product = ({ id, img, name, description, price }) => {
             <PD.Price>{Number(price).toLocaleString("pt-BR", { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' })}</PD.Price>
             <PD.Description>{description}</PD.Description>
             <PD.NavLinkContainer>
-                <PD.NavLink onClick={()=>addCart(id)}>Adicionar</PD.NavLink>
+                <PD.NavLink onClick={()=>addCart(id, price)}>Adicionar</PD.NavLink>
             </PD.NavLinkContainer>
         </PD.Container>
     )

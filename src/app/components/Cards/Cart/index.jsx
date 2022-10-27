@@ -1,13 +1,10 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../../../sharing/context/cart'
 import * as CC from './CardCartStyles'
-import { BsFillEraserFill } from "react-icons/bs";
-import { useState } from 'react';
 
 export const CardCart = ({id, img, name, price, qtd}) => {
     const { addCart, removeCart, removeItem } = useContext(CartContext)    
     const pathImg = process.env.REACT_APP_PATH_IMG_FOLDER
-
 
     return (
         <CC.Container>
@@ -17,12 +14,13 @@ export const CardCart = ({id, img, name, price, qtd}) => {
                         <img src={pathImg + img} alt='' width={100} />
                     </div>
                 </CC.Left>
-                <CC.Right >
+                <CC.Right>
                     <h2>{name}</h2>
-                    <h4><span>{qtd}x </span>{price}</h4>
-                    <h5><span>Subtotal: </span>{(parseFloat(price) * parseFloat(qtd)).toLocaleString()}</h5>
+                    <h4><span>{qtd}x </span>{Number(price).toLocaleString("pt-BR", { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' })}</h4>
+                    <h5>Subtotal: {Number(parseFloat(price) * parseFloat(qtd)).toLocaleString().toLocaleString("pt-BR", { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' })}</h5>
                     <CC.ButtonContainer>
                         <CC.IconPlus onClick={()=>addCart(id)}></CC.IconPlus>
+                        <span>{qtd}</span>
                         { qtd > 1 ?
                         <CC.IconMinus onClick={()=>removeItem(id)}></CC.IconMinus>
                         : 
@@ -32,7 +30,6 @@ export const CardCart = ({id, img, name, price, qtd}) => {
                     
                 </CC.Right>
             </CC.Wrapper>
-            {/* <CC.Total><h2>Total:</h2></CC.Total> */}
         </CC.Container>
     )
 }

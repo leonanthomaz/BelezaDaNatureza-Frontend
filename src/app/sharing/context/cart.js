@@ -14,7 +14,7 @@ export const CartProvider = ({ children }) => {
         setCart(carrinho)
     },[])
 
-    const addCart = (id) => {
+    const addCart = (id, price) => {
         // console.log('Função no contexto: ', id)
         const cartLocalStorage = JSON.parse(localStorage.getItem('cart'))
         const copyProductsCart = cartLocalStorage ? [...cartLocalStorage] : []
@@ -22,6 +22,7 @@ export const CartProvider = ({ children }) => {
         if(!item){
             copyProductsCart.push({ 
                 id: id,
+                price: price,
                 qtd: 1, 
             });
         }else{
@@ -31,7 +32,7 @@ export const CartProvider = ({ children }) => {
         setCart(cartLocalStorage)
     }
 
-    const removeItem = (id) => {
+    const removeItem = (id, price) => {
         // console.log('Função no contexto: ', id)
         const cartLocalStorage = JSON.parse(localStorage.getItem('cart'))
         const copyProductsCart = cartLocalStorage ? [...cartLocalStorage] : []
@@ -39,6 +40,7 @@ export const CartProvider = ({ children }) => {
         if(!item){
             copyProductsCart.push({ 
                 id: id, 
+                price: price,
                 qtd: 1
             });
         }else{
