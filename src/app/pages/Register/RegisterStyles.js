@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
-padding: 20px;
+margin: auto;
 `;
 
 export const Box = styled.div`
@@ -12,6 +12,11 @@ export const Box = styled.div`
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 10px 10px -5px;
+
+    @media(max-width: 650px){
+        padding: 10px;
+        max-width: 300px;
+    }
 
     h1{
         font-size: 25px;
@@ -42,6 +47,10 @@ export const Form = styled.form`
     margin: auto;
     margin-top: 20px;
     padding: 5px;
+
+    @media(max-width: 650px){
+        max-width: 250px;
+    }
 `;
 
 export const Input = styled.input`
@@ -57,6 +66,10 @@ export const Input = styled.input`
     -moz-transition: all .1s linear;
     -webkit-appearance:none;
     border-radius: 20px;
+
+    @media(max-width: 650px){
+        max-width: 200px;
+    }
 
     :focus{
         border: 2px solid red;
@@ -89,6 +102,13 @@ export const ContainerCenter = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
+
+    @media(max-width: 650px){
+        h4{
+            font-size: 12px;
+        }
+    }
 `;
 
 export const ButtonRedirect = styled(Link)`
@@ -105,6 +125,11 @@ export const ButtonRedirect = styled(Link)`
     justify-content: center;
     align-items: center;
     margin: 10px;
+
+    @media(max-width: 650px){
+        font-size: 12px;
+        max-width: 80px;
+    }
 
     :hover{
         background: red;

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export const Container = styled.div`
 margin: auto;
-`
+`;
 
 export const CartContainer = styled.div`
 display: block;

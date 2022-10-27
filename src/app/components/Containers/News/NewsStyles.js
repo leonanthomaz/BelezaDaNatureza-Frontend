@@ -11,7 +11,7 @@ color: gray;
 
 export const CardContainer = styled.div`
 display: grid;
-grid-template-columns: 300px 300px 300px;
+grid-template-columns: 250px 250px 250px;
 justify-content: center;
 text-align: center;
 gap: 10px;

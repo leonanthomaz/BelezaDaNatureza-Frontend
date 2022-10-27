@@ -8,11 +8,58 @@ import { Top } from '../../components/Containers/Top';
 
 
 export const Home = () => {
+
+    const pathImage = process.env.REACT_APP_PATH_IMG_LOCAL
+
     return (
         <H.Container>
             <Topbar/>
             <Header/>
             <Intro/>
+            <div className='home-container-bird' style={{ backgroundImage: `url(${pathImage + 'passaros.png'})`}}>
+                <div className='home-container-opacity'>
+                    <H.Wrapper>
+                        {/* <H.Left></H.Left>
+                        <H.Right></H.Right> */}
+                        <H.Items>
+                            <div className='home-items-container'>
+                                <div className='home-items-container-header'>
+                                    <h4>Natural e Vegano</h4>
+                                </div>
+                                <div className='home-items-container-body'>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and 
+                                        typesetting industry.
+                                    </p>
+                                </div>
+                            </div>
+                        </H.Items>
+                        <H.Items>
+                            <div className='home-items-container'>
+                                <div className='home-items-container-header'>
+                                    <h4>Frete Grátis</h4>
+                                </div>
+                                <div className='home-items-container-body'>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and 
+                                        typesetting industry.
+                                    </p>
+                                </div>
+                            </div>
+                        </H.Items>
+                        <H.Items>
+                            <div className='home-items-container'>
+                                <div className='home-items-container-header'>
+                                    <h4>Parcelamento</h4>
+                                </div>
+                                <div className='home-items-container-body'>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and 
+                                        typesetting industry.
+                                    </p>
+                                </div>
+                            </div>
+                        </H.Items>
+                    </H.Wrapper>
+                </div>
+            </div>
             <News/>
             <Top/>
         </H.Container>

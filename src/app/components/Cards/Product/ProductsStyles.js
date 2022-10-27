@@ -6,19 +6,19 @@ export const Container = styled.div`
 /* border: 2px solid red; */
 display: flex;
 flex-direction: column;
-width: 300px;
+width: 250px;
 /* box-shadow: 2px 2px 3px 2px gray; */
 box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 border-radius: 7px;
 /* font-family: 'Josefin Sans', sans-serif; */
-padding: 10px 0px 10px;
+padding: 10px;
 
 @media(max-width: 760px){
-    width: 200px;
+    width: 170px;
 }
 
 @media(max-width: 500px){
-    width: 170px;
+    width: 150px;
 }
 `
 

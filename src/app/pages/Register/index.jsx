@@ -81,7 +81,7 @@ export const Register = () => {
                     </L.ContainerCenter>
                     <L.ContainerCenter>
                         <h4>Tem uma conta?</h4>
-                        <L.ButtonRedirect to='/register'>Faça Login!</L.ButtonRedirect>
+                        <L.ButtonRedirect to='/login'>Faça Login!</L.ButtonRedirect>
                     </L.ContainerCenter>
                 </L.Box>
             </L.FormContainer>

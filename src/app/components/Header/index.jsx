@@ -7,7 +7,7 @@ import { CartContext } from "../../sharing/context/cart";
 export const Header = () => {
     const { setCart } = useContext(CartContext)
 
-    const baseUrl = process.env.REACT_APP_BASEURL
+    const pathImg = process.env.REACT_APP_PATH_IMG_LOCAL
     
     const carrinho = JSON.parse(localStorage.getItem("cart"))
     useEffect(()=>{
@@ -43,7 +43,7 @@ export const Header = () => {
                 <H.LogoContainer>
                     <H.Logo>
                         <Link to='/'>
-                            <img src={baseUrl + '/assets/img/logo.png'} alt='' />
+                            <img src={pathImg + 'logo.png'} alt='' />
                         </Link>
                     </H.Logo>
                 </H.LogoContainer> 
