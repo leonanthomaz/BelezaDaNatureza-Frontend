@@ -2,7 +2,7 @@
 import React from "react";
 import * as I from './IntroStyles'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css/skyblue';
+import '@splidejs/react-splide/dist/css/themes/splide-sea-green.min.css';
 
 export const Intro = () => {
     return(

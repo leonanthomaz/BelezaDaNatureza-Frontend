@@ -9,25 +9,28 @@ export const Box = styled.div`
     margin: auto;
     max-width: 500px;
     height: auto;
-    box-shadow: 0.4em 0.3em 0.7em green; 
     border-radius: 10px;
     padding: 20px;
+    box-shadow: 0 10px 10px -5px;
+
+    h1{
+        font-size: 25px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    p {
+        .error-login{
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+
 
 `;
 
-export const Title = styled.h1`
-font-size: 25px;
-text-align: center;
-padding: 10px;
-`;
-
-export const ErrorMessage = styled.p`
-font-size: 14px;
-text-align: center;
-`;
-
-export const FormContainer = styled.h1`
-    border: 2px solid red;
+export const FormContainer = styled.div`
+    /* border: 2px solid red; */
     padding-top: 20px;
 `;
 
@@ -42,7 +45,7 @@ export const Form = styled.form`
 `;
 
 export const Input = styled.input`
-    color: green;
+    color: #0e880ec2;
     border: 1px solid #141414;
     outline: none;
     width: 300px;
@@ -53,6 +56,7 @@ export const Input = styled.input`
     -webkit-transition: all .1s linear;
     -moz-transition: all .1s linear;
     -webkit-appearance:none;
+    border-radius: 20px;
 
     :focus{
         border: 2px solid red;
@@ -61,20 +65,51 @@ export const Input = styled.input`
     }
 `;
 
-export const Button = styled.button`
+export const ButtonSendForm = styled.button`
     width: 100px;
     padding: 5px;
     text-decoration: none;
-    background: red;
+    background: #0e880ec2;
     color: white;
     transition: all ease 0.5s;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+
     :hover{
-    background: white;
-    border: 2px solid white;
-    color: red;
-    transition: all ease 0.5s;
+        background: red;
+        border: 2px solid white;
+        color: white;
+        transition: all ease 0.5s;
     }
 `;
 
+export const ContainerCenter = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const ButtonRedirect = styled(Link)`
+    width: 100px;
+    height: 20px;
+    padding: 5px;
+    text-decoration: none;
+    background: #0e880ec2;
+    color: white;
+    transition: all ease 0.5s;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+
+    :hover{
+        background: red;
+        border: 2px solid white;
+        color: white;
+        transition: all ease 0.5s;
+    }
+`;

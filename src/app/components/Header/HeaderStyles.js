@@ -10,6 +10,7 @@ justify-content: space-between;
 align-items: center;
 box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 height: 60px;
+margin: 10px;
 
 @media(max-width: 760px){
     flex-direction: row-reverse;
@@ -101,10 +102,9 @@ img{
     left: 10px;
 }
 
-@media(max-width: 450px){
+@media(max-width: 550px){
     width: 80px;
     height: 80px;
-    bottom: 25px;
     left: 50px;
     
     img{
@@ -120,13 +120,36 @@ flex-direction: row;
 align-items: center;
 font-size: 25px;
 margin: 10px;
-/* border: 2px solid red; */
 
 @media(max-width: 760px){
     flex-direction: row;
 }
 
-`
+`;
+
+export const CartContainer = styled.div`
+display: flex;
+/* border: 2px solid red; */
+position: relative;
+
+`;
+export const CartIcon = styled.div`
+`;
+export const CartNumber = styled.div`
+background: red;
+border-radius: 50%;
+padding: 12px;
+position: absolute;
+right: 0;
+width: 5px;
+height: 5px;
+font-size: 14px;
+color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+
+`;
 
 export const IconMenu = styled(BiMenu)`
 color: #141414;
@@ -144,6 +167,8 @@ color: #141414;
 export const IconSacola = styled(BsBag)`
 color: #141414;
 margin: 5px;
+margin-right: 20px;
+font-size: 30px;
 
 `
 export const IconUser = styled(AiOutlineUser)`
