@@ -8,3 +8,9 @@ export const TopBar = styled.div`
 /* border: 2px solid red; */
 `;
 
+// export const BirdContainer = styled.div`
+// border: 2px solid red;
+// height: 300px;
+// background-color: #ffffffc0;
+// `;
+

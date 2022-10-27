@@ -7,6 +7,7 @@ import { Intro } from '../../components/Intro'
 import { Emphasis } from '../../components/Emphasis'
 import { Footer } from '../../components/Footer'
 import { News } from '../../components/News'
+import background_bird from '../../share/assets/img/passaros.png'
 
 export const Home = () => {
 
@@ -15,6 +16,9 @@ export const Home = () => {
             <Topbar/>
             <Header/>
             <Intro/>
+            {/* <H.BirdContainer style={{ backgroundImage: `url(${background_bird})`}}>
+
+            </H.BirdContainer> */}
             <Emphasis/>
             <News/>
             <Footer />
