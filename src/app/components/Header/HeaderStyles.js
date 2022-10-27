@@ -58,6 +58,12 @@ width: 150px;
 
 export const Center = styled.div`
 
+.header-user-menu{
+    
+    @media(min-width: 760px){
+        display: none;
+    }
+}
 `;
 
 export const Right = styled.div`
@@ -65,9 +71,13 @@ display: flex;
 justify-content: space-between;
 justify-content: center;
 align-items: center;
+margin-right: 40px;
 
 @media(max-width: 760px){
     flex-direction: column;
+    margin-right: 0px;
+    margin-left: 10px;
+
 }
 
 `;
@@ -87,7 +97,7 @@ export const Logo = styled.div`
 position: relative;
 z-index: 99;
 width: 150px;
-left: 30px;
+left: 50px;
 border-radius: 50%;
 border: 3px solid #0e880ec2;
 bottom: 65px;
@@ -174,6 +184,7 @@ font-size: 30px;
 export const IconUser = styled(AiOutlineUser)`
 margin: 5px;
 color: #141414;
+font-size: 30px;
 
 `
 

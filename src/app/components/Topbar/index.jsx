@@ -1,11 +1,9 @@
 
-import React, { useContext } from "react";
+import React  from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../sharing/context/auth";
 import * as T from './TopbarStyles'
 
 export const Topbar = () => {
-    const { user } = useContext(AuthContext)
 
     return(
         <T.Container>
@@ -17,11 +15,6 @@ export const Topbar = () => {
                     <T.Nav>Blog</T.Nav>
                 </Link>
             </T.Menu>
-            <T.IconsContainer>
-                <Link to={user ? '/myaccount' : '/login'}>
-                    <T.IconUser/>
-                </Link>
-            </T.IconsContainer>
         </T.Container>
     )
 }

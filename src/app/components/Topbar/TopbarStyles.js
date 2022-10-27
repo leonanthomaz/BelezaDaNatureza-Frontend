@@ -1,13 +1,12 @@
 import styled from "styled-components";
 import { NavLink } from 'react-router-dom';
-import { AiOutlineUser } from "react-icons/ai";
 
 export const Container = styled.div`
 display: flex;
 justify-content: flex-end;
-height: 40px;
-/* border: 2px solid red; */
+height: 50px;
 align-items: center;
+flex-direction: row;
 
 @media(max-width: 760px){
     justify-content: flex-start;
@@ -21,6 +20,11 @@ flex-direction: row;
 list-style: none;
 font-size: 16px;
 font-weight: 500;
+margin-right: 50px;
+
+@media(max-width: 760px){
+    flex-direction: row;
+}
 
 a{
     text-decoration: none;
@@ -44,22 +48,4 @@ export const Nav = styled(NavLink)`
 text-decoration: none;
 `;
 
-export const IconsContainer = styled.div`
-display: flex;
-flex-direction: row;
-align-items: center;
-font-size: 25px;
-margin: 10px;
 
-@media(max-width: 760px){
-    flex-direction: row;
-}
-
-`
-
-export const IconUser = styled(AiOutlineUser)`
-margin: 5px;
-color: #141414;
-font-size: 25px;
-
-`

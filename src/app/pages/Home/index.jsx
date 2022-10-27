@@ -16,6 +16,7 @@ export const Home = () => {
             <Topbar/>
             <Header/>
             <Intro/>
+            <News/>
             <div className='home-container-bird' style={{ backgroundImage: `url(${pathImage + 'passaros.png'})`}}>
                 <div className='home-container-opacity'>
                     <H.Wrapper>
@@ -60,7 +61,6 @@ export const Home = () => {
                     </H.Wrapper>
                 </div>
             </div>
-            <News/>
             <Top/>
             <Whatsapp />
         </H.Container>
