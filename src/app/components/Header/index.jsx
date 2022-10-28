@@ -105,12 +105,11 @@ export const Header = () => {
                         cursor: 'pointer'
                     }}/> }
  
-                    {!mobile ? 
-                    <div className="header-user-menu">
+                    {/* <div className="header-user-menu">
                         <Link to={user ? '/myaccount' : '/login'}>
                             <H.IconUser/>
                         </Link>
-                    </div> : '' }
+                    </div> */}
                 </H.IconsContainer>
             </H.Right>
         </H.Container>

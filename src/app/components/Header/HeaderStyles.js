@@ -187,10 +187,9 @@ color: #141414;
 font-size: 30px;
 
 `
-
 export const IconSearch = styled(BsSearch)`
 margin: 5px;
-`
+`;
 
 
 
